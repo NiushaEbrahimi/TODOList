@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/todolist_detail.css' %}">
+{% endblock %}
+{% block content %}
+<h2>
+    {% block title %}{{ lists.title }}{% endblock %}
+</h2>
+<div class="checkbox-container">
+    {% for td in items %}
+    <div>
+        <input
+        type="checkbox"
+        id="{{ td.id }}"
+        name="{{ td.title}}"
+        value="{{ td.id }}" />
+        <label for="{{ td.id }}">{{ td.title }}</label>
+        <i>{{ td.end_date }}</i>
+    </div>
+    
+    {% endfor %}
+</div>
+{% endblock %}

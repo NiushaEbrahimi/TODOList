@@ -1,0 +1,20 @@
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/todolist_list.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="article-list">
+    <h1>To-Do List</h1>
+    <ul>
+        {% for td in lists %}
+        <!-- <li><a href="{{ td.get_absolute_url }}"></a>{{ td.title}}</li> -->
+        <li><a href="{% url 'ListDetail' td.id %}">{{ td.title}}</a></li> 
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
