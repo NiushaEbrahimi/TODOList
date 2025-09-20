@@ -6,11 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo List</title>
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
     {% block extra_css %}
     {% endblock %}
 </head>
 <body>
-    <header></header>
+    {% block heade %}
+    {% endblock %}
     <main>
         {% block content %}
         <h1>replace content here</h1>

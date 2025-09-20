@@ -1,0 +1,42 @@
+main{
+    height: 50vh;
+    align-items: start;
+    padding-top: 10vh;
+}
+
+h1{
+    font-size: 2.5rem;
+    margin: 0px;
+}
+
+p{
+    font-size: 1.7rem;
+    margin: 0px;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    margin-top: 5vh ;
+    background-color: #b0b9fd;
+    padding: 2vh 3vw;
+    border: none;
+    border-radius: 1rem;
+}
+button > a{
+    color: black;
+    font-family: "Dongle";
+    text-decoration: none;
+    font-size: 1.7rem;
+}
+button:hover ,button >  a:hover {
+    transition-duration: 300ms;
+    cursor: pointer;
+    background-color: #9ca5e5;
+}

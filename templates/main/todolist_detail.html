@@ -1,24 +1,40 @@
 {% extends 'base.html' %}
 {% load static %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/todolist_detail.css' %}">
 {% endblock %}
+
+{% block heade %}
+<header>
+  <button><a href="{% url 'todolist_create' %}">edit</a></button>
+</header>
+{% endblock %}
+
 {% block content %}
-<h2>
-    {% block title %}{{ lists.title }}{% endblock %}
-</h2>
+<h1>{{ lists.title }}</h1>
+
 <div class="checkbox-container">
-    {% for td in items %}
+  {% for td in items %}
+  <form method="post" action="">
+    {% csrf_token %}
+    <input type="hidden" name="item_id" value="{{ td.id }}">
     <div>
-        <input
+      <input
         type="checkbox"
-        id="{{ td.id }}"
-        name="{{ td.title}}"
-        value="{{ td.id }}" />
-        <label for="{{ td.id }}">{{ td.title }}</label>
-        <i>{{ td.end_date }}</i>
+        id="item-{{ td.id }}"
+        name="is_completed"
+        onchange="this.form.submit()"
+        {% if td.is_completed %}checked{% endif %}>
+      <label for="item-{{ td.id }}">{{ td.title|default:"(no title)" }}</label>
+
+      {% if td.end_date %}
+        <i>deadline : {{ td.end_date|date:"n / j / Y" }}</i>
+      {% endif %}
     </div>
-    
-    {% endfor %}
+  </form>
+  {% empty %}
+    <a class="add-todo" href="{% url 'todolist_create' %}">+ Add ToDos</a>
+  {% endfor %}
 </div>
 {% endblock %}

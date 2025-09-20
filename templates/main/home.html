@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <h1 class="text-center">Welcome to TODOList</h1>
     <p class="text-center">A simple to-do list application built with Django.</p>
+    <button><a href="{% url 'Lists' %}">Show Lists</a></button>
 </div>
 {% endblock %}
