@@ -2,18 +2,16 @@
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/todolist_detail.css' %}">
+<link rel="stylesheet" href="{% static 'css/todolist_edit.css' %}">
 {% endblock %}
 
 {% block heade %}
-<header>
-  <button><a href="{% url 'todolist_edit' lists.pk %}">edit</a></button>
-</header>
+<header><button><a href="{% url 'todolist_edit' lists.pk %}"></a>edit</button></header>
 {% endblock %}
 
 {% block content %}
-<h1>{{ lists.title }}</h1>
 
+<h1>{{ lists.title }}</h1>
 <div class="checkbox-container">
   {% for td in items %}
   <form method="post" action="">
@@ -37,4 +35,5 @@
     <a class="add-todo" href="{% url 'todolist_create' %}">+ Add ToDos</a>
   {% endfor %}
 </div>
+
 {% endblock %}

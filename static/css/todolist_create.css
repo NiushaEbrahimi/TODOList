@@ -1,0 +1,35 @@
+body , main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    height: 100vh;
+}
+main{
+    height: auto;
+    padding: 5vh 5vw;
+}
+input{
+    font-family: 'Dongle';
+}
+.form-group{
+    display: grid;
+    row-gap: 3vh;
+    grid-template-rows: 60px 1fr;
+}
+.todo-title{
+    border: 0.5px solid #00000041;
+    font-size: 1.7rem;
+}
+.item-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+    justify-content: start;
+    align-items: center;
+    align-content: center;
+}
+button{
+    margin: 0px;
+}
