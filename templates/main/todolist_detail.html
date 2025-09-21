@@ -19,17 +19,17 @@
   <form method="post" action="">
     {% csrf_token %}
     <input type="hidden" name="item_id" value="{{ td.id }}">
-    <div>
+    <div class="todo-container">
       <input
         type="checkbox"
         id="item-{{ td.id }}"
         name="is_completed"
         onchange="this.form.submit()"
         {% if td.is_completed %}checked{% endif %}>
-      <label for="item-{{ td.id }}">{{ td.title|default:"(no title)" }}</label>
+      <label for="item-{{ td.id }}" class="item-label">{{ td.title|default:"(no title)" }}</label>
 
       {% if td.end_date %}
-        <i>deadline : {{ td.end_date|date:"n / j / Y" }}</i>
+        <p>deadline: {{ td.end_date|date:"n / j / Y" }}</p>
       {% endif %}
     </div>
   </form>

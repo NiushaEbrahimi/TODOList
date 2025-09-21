@@ -26,6 +26,7 @@ class ToDoDetailView(DetailView):
     def post(self, request, *args, **kwargs):
         self.object = self.get_object()
         item_id = request.POST.get("item_id")
+        
         if item_id:
             item = get_object_or_404(ItemToDo, id=item_id, todolist=self.object)
             item.is_completed = not item.is_completed

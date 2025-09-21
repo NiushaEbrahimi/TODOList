@@ -6,6 +6,7 @@ main{
     align-items: center;
     flex-direction: column;
     font-size: 1.7rem;
+    row-gap: 5vh;
 }
 
 body{
@@ -15,13 +16,88 @@ body{
     justify-content: center;
     align-items: center;
 }
+
 i{
     display: block;
 }
+
 .add-todo{
     text-decoration: none;
     color: #8087b8;
 }
+
 .add-todo:hover {
     color:#9ca5e5;
+}
+
+.item-label{
+    font-size: 2.2rem;
+}
+
+.todo-container{
+    display: grid;
+    grid-template-columns: 0.5fr 4fr 4fr;
+    column-gap: 2vw;
+}
+
+form{
+    display: grid;
+    justify-content: center ;
+    align-items: center ;
+    text-align: center;
+}
+
+.checkbox-container{
+    display: grid;
+    row-gap: 5vh;
+}
+
+p{
+    margin: 0px;
+    text-align: center;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+label{
+    display: grid;
+    justify-content: start;
+    align-items: center;
+}
+
+a{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (max-width: 580px) {
+    header{
+        translate:70% 0%;
+    }
+    main{
+        width: 70vw;
+    }
+    header > button{
+        width: 20vw;
+    }
+}
+@media only screen and (max-width: 410px) {
+    h1{
+        font-size: 2.2rem ;
+    }
+    .item-label{
+        font-size: 1.6rem;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+    .todo-container{
+        grid-template-columns: 0.5fr 3fr 5fr;
+    }
+    main{
+        padding: 2vh 1vw;
+        width: 80vw;
+    }
 }

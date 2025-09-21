@@ -7,29 +7,78 @@ body{
     height: 100vh;
 }
 main{
+    min-width: auto;
     height: auto;
     padding: 5vh 5vw;
+}
+.container{
+    width: 100%;
 }
 input{
     font-family: 'Dongle';
 }
 .form-group{
     display: grid;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
     row-gap: 3vh;
-    grid-template-rows: 60px 1fr;
+    height: auto;
+    max-height: 75vh;
+    overflow-y:scroll;
 }
 .todo-title{
+    min-width: 40vw;
     border: 0.5px solid #00000041;
     font-size: 1.7rem;
 }
 .item-container{
-    width: 100%;
+    /* width: 100%; */
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
     justify-content: start;
     align-items: center;
     align-content: center;
+    padding: 0px 5vw 0px 5vw;
 }
-button{
-    margin: 0px;
+
+.item-container-after{
+    grid-template-columns: 2fr 1fr 2fr 1fr;
+}
+.create-submit{
+    width: 10vw;
+    padding: 1vh 3vw;
+    /* width: auto; */
+    font-size: 1.7rem;
+}
+.button-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.add-item{
+    width: 3vw ;
+    line-height: 6vh;
+    padding: 0px ;
+    font-size: 3rem;
+    margin-top: 0px;
+}
+.delete-button{
+    background-color: red;
+    color: white;
+    margin-left: 1vw;
+    margin-right: 1vw;
+    margin-top: 0px;
+    font-size: 1.6rem;
+    padding: 1vh 1vw;
+}
+
+.todo-job-title , .todo-date{
+    font-size: 1.5rem;
+}
+
+@media only screen and (max-width: 1000px) {
+    .create-submit{
+        width: 20vw;
+    }
+    
 }

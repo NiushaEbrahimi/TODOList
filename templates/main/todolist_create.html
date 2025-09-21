@@ -14,10 +14,13 @@
         <div class="item-container" id="1">
             <button type="button" class="add-item" id="1">+</button>
         </div>
-        <button type="submit">Create</button>
+        <div class="button-container">
+            <button type="submit" class="create-submit">submit</button>
+        </div>
     </form>
 </div>
 {% endblock %}
+
 {% block extra_js %}
 <script src="{% static 'js/todolist_create.js' %}"></script>
 {% endblock %}

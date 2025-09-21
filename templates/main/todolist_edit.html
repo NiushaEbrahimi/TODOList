@@ -5,10 +5,6 @@
 <link rel="stylesheet" href="{% static 'css/todolist_edit.css' %}">
 {% endblock %}
 
-{% block heade %}
-<header><button><a href="{% url 'todolist_edit' lists.pk %}"></a>edit</button></header>
-{% endblock %}
-
 {% block content %}
 
 <h1>{{ lists.title }}</h1>
